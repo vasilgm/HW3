@@ -8,3 +8,13 @@
 #     1 2 3 4 5
 #     3
 #     -> 1
+
+import random
+n = int (input ('Введите количество элементов списка -> '))
+list_one = []
+i = 1
+while i <= n:
+    list_one.append(random.randint(1,10))
+    i+=1
+print(list_one)
+print(list_one.count(int(input())))
