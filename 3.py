@@ -2,8 +2,10 @@
 # В случае с английским алфавитом очки распределяются так:
 # A, E, I, O, U, L, N, S, T, R – 1 очко;
 # D, G – 2 очка;
-# B, C, M, P – 3 очка; F, H, V, W, Y – 4 очка;
-# K – 5 очков; J, X – 8 очков;
+# B, C, M, P – 3 очка;
+# F, H, V, W, Y – 4 очка;
+# K – 5 очков;
+# J, X – 8 очков;
 # Q, Z – 10 очков.
 # А русские буквы оцениваются так: А, В, Е, И, Н, О, Р, С, Т – 1 очко;
 # Д, К, Л, М, П, У – 2 очка;
@@ -19,3 +21,30 @@
 #
 # ноутбук
 #     12
+
+a = list(input('Введите слово -> '))
+dic = { 1 : list('AEIOULNSTRАВЕИНОРСТaeioulnstrавеинорст'),
+        2 : list('DGДКЛМПУdgдклмпу'),
+        3 : list('BCMPБГЁЬЯbcmpбгёья'),
+        4 : list('FHVWYЙЫfhvwyйы'),
+        5: list('KЖЗХЦЧkжзхцч'),
+        8: list('JXШЭЮjxшэю'),
+        10: list('QZФЩЪqzфщъ') }
+
+sum = 0
+for i in range(len(a)):
+        if dic[1].count(a[i]) > 0:
+                sum +=1
+        elif dic[2].count(a[i]) > 0:
+                sum += 2
+        elif dic[3].count(a[i]) > 0:
+                sum += 3
+        elif dic[4].count(a[i]) > 0:
+                sum += 4
+        elif dic[5].count(a[i]) > 0:
+                sum += 5
+        elif dic[8].count(a[i]) > 0:
+                sum += 8
+        elif dic[10].count(a[i]) > 0:
+                sum += 10
+print(sum)
